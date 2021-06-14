@@ -11,7 +11,6 @@ import java.time.Month;
 import java.util.List;
 
 @SpringBootApplication
-@RestController
 public class SpringBootAmigoscodeApplication {
 
 	public static void main(String[] args) {

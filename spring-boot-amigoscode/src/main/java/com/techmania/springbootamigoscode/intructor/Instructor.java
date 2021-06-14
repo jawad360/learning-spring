@@ -46,7 +46,8 @@ public class Instructor {
     )
     private String email;
 
-    //    private List<Course> courses;
+    @OneToMany(mappedBy = "instructor")
+    private List<Course> courses;
 
 
     public Instructor() {
@@ -61,6 +62,12 @@ public class Instructor {
         this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    public Instructor(String name, String email, List<Course> courses) {
+        this.name = name;
+        this.email = email;
+        this.courses = courses;
     }
 
     public Long getId() {
@@ -85,5 +92,13 @@ public class Instructor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
